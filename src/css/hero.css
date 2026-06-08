@@ -1,0 +1,175 @@
+.hero-main_box {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #127c72;
+    /* height: fit-content; */
+    min-height: 90vh;
+  /* repeating background pattern */
+  background-image: url('../assets/health-bg-patterns.png');
+  background-repeat: repeat;         /* repeats in both directions */
+  background-position: top left;     /* start position */
+  background-size: auto; 
+
+
+  box-sizing: border-box; /* ✅ includes padding in width calculations */
+  width: 100%; /* ✅ prevents overflow */
+  overflow-x: hidden;
+
+}
+
+.hero-background img {
+
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+}
+
+.hero-background {
+    width: 50%;
+    max-width: 600px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+
+}
+.hero-desciption{
+    /* background-color: chartreuse; */
+    padding-left: 20px;
+    padding-top: -100px;
+    width:40%;
+    
+
+}
+.hero-desciption h1{
+
+    /* padding-left: 20px; */
+    line-height: 70px;
+    
+}
+
+.hero-desciption p{
+    /* width:550px; */
+    margin-top: -35px;
+    line-height: 25px;
+
+}
+.hero-title{
+color: #ffffff;
+}
+p.hero-para{
+color: #ffffff;
+margin-top: 10px;
+
+}
+button.shop-now-btn{
+  max-width: 140px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color:#127c72;
+  border: 0px;
+  margin-top: 15px;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  text-align: center
+  ;
+}
+
+.shop-now-btn:hover{
+  cursor: pointer;
+  background-color: #7bbbb5 ;
+      color:white;
+
+}
+
+
+@media  screen and (max-width:900px){
+
+
+
+  .hero-main_box {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 60px 0px;
+    height: auto;
+    width: 100%;
+
+    /* margin: 0px 3%; */
+  }
+  .hero-background {
+    width: 75vw;
+    height: auto;
+    min-width:350px;
+    max-height: 520px;
+    /* background-color: aqua; */
+    padding-top: 0px;
+    /* max-width: 900px; */
+    margin: auto;
+
+  }
+  .hero-background img {
+    margin: auto;
+  }
+  .hero-desciption {
+    width: 90vw;
+   
+
+  }
+    .hero-heading{
+    font-size: 50px;
+    margin-top: 40px;
+    line-height: 60px;
+ margin-bottom: 45px;
+
+  }
+  .hero-para {
+       line-height: 20px;
+       /* padding-top: 30px; */
+
+  }
+}
+
+@media screen and (max-width:800px)
+{
+   .hero-desciption{
+    margin-top: 0px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 600px){
+
+
+  .hero-main_box{
+    min-height: 80vh;
+  }
+ .hero-desciption h1 {
+    font-size:  40px;  ;
+    line-height: 50px;
+    margin: 20px 0px;
+  }
+ .hero-desciption{
+
+    margin: 0px;
+    padding: 0px;
+
+
+  }
+ .hero-desciption p{
+    line-height: 20px;
+    margin-top: 0px;
+    font-size: 15.5px;
+
+ }
+
+}

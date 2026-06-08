@@ -1,0 +1,79 @@
+.orders-container {
+   padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.orders-container h2 {
+    font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #131313;
+}
+
+/* Scrollable wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 10px;
+  
+}
+
+/* Increase table width more */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1300px; /* increased from 1000px → 1300px */
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 18px;
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.orders-table th {
+  background-color: #127c72;
+  color: white;
+  font-size: 15px;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Approve button */
+.approve-btn {
+  background-color: #1fa89b;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.approve-btn:hover {
+  background-color: #127c72;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .orders-container {
+    padding: 10px;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .approve-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}

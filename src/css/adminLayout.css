@@ -1,0 +1,27 @@
+.layout {
+  display: flex;
+}
+
+/* Main section (topbar + inner content) */
+.main-section {
+  margin-left: 250px; /* sidebar width */
+  width: calc(100% - 250px);
+}
+
+/* Topbar fixed */
+.main-section .topbar {
+  position: fixed;
+  left: 250px;
+  top: 0;
+  width: calc(100% - 250px);
+  z-index: 10;
+}
+
+/* Content area */
+.content-area {
+  margin-top: 70px; /* height of topbar */
+  padding: 25px;
+  min-height: calc(100vh - 70px);
+  background: #ececec;
+  overflow-y: auto;
+}

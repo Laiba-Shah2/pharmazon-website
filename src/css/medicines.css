@@ -1,0 +1,41 @@
+div.medicine-container {
+    background-color: #f5f9fc;
+    padding: 100px 0px 50px 0px;
+    flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+
+div.medicine-inner-box {
+    width: 90vw;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+}
+
+
+h1.medicine-heading {
+    text-align: center;
+    color: #383b3b;
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0px 0px 30px 0px;
+}
+
+.see-more-medicine-btn-div {
+    width: fit-content;
+    margin: 60px auto;
+}
+
+.see-more-medicine-btn {
+
+    width: 180px;
+    margin: auto;
+    text-align: center;
+
+}

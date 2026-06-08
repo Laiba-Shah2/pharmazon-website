@@ -1,0 +1,36 @@
+
+.discount-slider {
+  width: 100%;
+  overflow: hidden;
+  background-color: #00413a;
+  border-top: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
+  white-space: nowrap;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll-left 10s linear infinite;
+  padding: 5px 0px;
+  background-color: #00413a;
+}
+
+.slide-text {
+  display: inline-block;
+  padding: 0 4rem; /* gap between repeated texts */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff; /* your brand color */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* moves half the width for smooth loop */
+  }
+}
+
+
+

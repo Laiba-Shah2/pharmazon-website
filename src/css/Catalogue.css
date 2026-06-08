@@ -1,0 +1,185 @@
+.catalogue-container {
+  padding: 20px;
+  max-width: 1000px;   /* SAME as your inventory layout */
+  margin: auto;
+}
+
+.catalogue-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #131313;
+}
+
+/* Add Catalogue Box */
+.add-catalogue {
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.add-catalogue input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  font-size: 15px;
+}
+
+.add-catalogue input:focus {
+  border-color: #5c0a21;
+}
+
+.add-catalogue button {
+  padding: 12px 20px;
+  background: #127c72;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1 1 200px;
+}
+
+.add-catalogue button:hover {
+  background: #2eb9ab;
+}
+
+/* Table Wrapper (Card style) */
+.table-wrapper {
+  margin-top: 25px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+table th {
+  background: #127c72;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Image styling */
+.catalogue-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Button Styles (matched with inventory layout) */
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* Edit */
+.edit-btn {
+  background: #0A1D56;
+  color: white;
+  width: 45%;
+  margin-right: 5px;
+
+}
+.edit-btn:hover {
+  background: #07123a;
+}
+
+/* Delete */
+.delete-btn {
+  background: #C70039;
+  color: white;
+  width: 45%;
+  margin-right: 0px;
+
+
+}
+.delete-btn:hover {
+  background: #a00030;
+}
+
+/* Save */
+.save-btn {
+  background: #198754;
+  color: white;
+}
+.save-btn:hover {
+  background: #136c41;
+}
+
+/* Cancel */
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+.cancel-btn:hover {
+  background: #555b60;
+}
+
+/* Editing input fields inside table */
+tbody input {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+tbody input:focus {
+  border-color: #5c0a21;
+}
+.catalogue-table th,
+.catalogue-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap; /* prevents squeezing */
+}
+
+/* No data text */
+.no-data {
+  text-align: center;
+  color: gray;
+  padding: 20px;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .add-catalogue {
+    flex-direction: column;
+  }
+
+  .add-catalogue button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,118 @@
+.checkout-body{
+
+  height: auto;
+  background-color: #127c712c;
+  margin: 0px;
+  padding: 30px 0px 60px 0px;
+  /* background-color: aquamarine; */
+}
+
+.checkout-container {
+  width: 100%;
+  /* max-width: 450px; */
+  margin: 0px auto;
+  padding: 20px;
+    /* background-color: #990000; */
+    /* width:80vw; */
+}
+
+.checkout-heading {
+   text-align: center;
+    margin: 0px auto;
+    padding: 40px 0px 100px 0px;
+    font-size: 55px;
+    font-weight: 700;
+    color: #383b3b;
+
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+
+}
+
+.checkout-form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #383b3b;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  background-color: #127c712c;
+}
+
+.checkout-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.place-order-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  /* background-color: #2563eb; */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  /* font-weight: 600; */
+  transition: 0.2s;
+}
+.cash-on-delivery{
+  color:#383b3b;
+  /* font-weight: 500; */
+  margin-top: -10px;
+}
+
+.cash-on-delivery span{
+  color:#383b3b;
+  font-weight: 600;
+}
+
+.checkout-inner-div{
+    width:80vw;
+/* background-color:chartreuse; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    margin: auto;
+    
+}
+@media screen and (max-width: 500px) {
+  .checkout-container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .checkout-inner-div{
+width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkout-form{
+
+    width: 90vw;
+min-width:320px;
+margin:0px auto;
+  }
+}

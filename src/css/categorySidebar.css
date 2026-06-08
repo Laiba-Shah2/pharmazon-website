@@ -1,0 +1,104 @@
+/* === SIDEBAR CONTAINER === */
+.sidebar-container {
+  width: 250px;
+  background: #ffffff;
+  border-right: 3px solid #127c72;
+  padding: 20px;
+  border-radius: 10px;
+  height: auto;
+}
+
+/* SECTION TITLE */
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #127c72;
+  margin-bottom: 10px;
+}
+
+/* CATEGORY LIST */
+.category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #333;
+  border: 1px solid transparent;
+}
+
+.category-list li:hover {
+  background: #e5f7f5;
+  border-color: #127c72;
+}
+
+.active-category {
+  background: #127c72;
+  color: white;
+  border: 1px solid #127c72;
+}
+
+/* === PRICE FILTER === */
+.price-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-inputs input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #127c72;
+  outline: none;
+  min-width: 100px;
+}
+
+.price-inputs input:focus {
+  border-color: #0f685d;
+  box-shadow: 0 0 5px rgba(18, 124, 114, 0.4);
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+@media (max-width: 992px) {
+  .sidebar-container {
+    width: 220px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #127c72;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-container {
+    padding: 12px;
+  }
+
+  .category-list li {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .sidebar-title {
+    font-size: 16px;
+  }
+
+  .price-inputs input {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

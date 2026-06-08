@@ -1,0 +1,76 @@
+.order-summary-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.order-summary-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #127c72; /* Dark maroon */
+}
+
+/* Table style */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  color: #383b3b;
+}
+
+.order-table thead {
+  background: #127c72; /* maroon */
+  color: white;
+}
+
+.order-table th,
+.order-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-table tbody tr:hover {
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+/* No Orders Message */
+.no-orders {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Colors for different statuses */
+.status-badge.pending {
+  background: #ffe9b3;
+  color: #a67c00;
+}
+
+.status-badge.approved {
+  background: #b3ffd1;
+  color: #00662e;
+}
+
+.status-badge.delivered {
+  background: #b3e0ff;
+  color: #004a80;
+}
+
+.status-badge.cancelled {
+  background: #ffb3b3;
+  color: #800000;
+}

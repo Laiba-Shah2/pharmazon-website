@@ -1,0 +1,92 @@
+/* Main Container */
+.medicine-page-container {
+  width: 100%;
+  padding: 20px;
+  background: #f7f9fa;
+  min-height: 100vh;
+}
+
+/* FLEX LAYOUT – Sidebar Left + Products Right */
+.important-info {
+  display: flex;
+  gap: 25px;
+  margin: 120px auto;
+  align-items: flex-start;
+}
+
+/* Sidebar (Fixed Width) */
+.sidebar-container {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* Medicine Grid Area */
+.medicine-grid {
+  flex: 1; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 8px;
+
+}
+
+/* Each Card — EXACT 4 per row */
+.medicine-grid .medicine-card {
+  width: calc(25% - 15px); /* 4 cards per row */
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+}
+
+.medicine-grid .medicine-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- RESPONSIVE FLEX DESIGN ---------- */
+
+/* Medium screens: 2 cards per row */
+@media (max-width: 1100px) {
+  .medicine-grid .medicine-card {
+    width: calc(50% - 15px);
+  }
+}
+
+/* Reduce sidebar width slightly */
+@media (max-width: 900px) {
+  .sidebar-container {
+    width: 200px;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  /* Sidebar moves above products */
+  .important-info {
+    flex-direction: column;
+  }
+
+  /* Full width sidebar */
+  .sidebar-container {
+    width: 100%;
+  }
+
+  /* Grid full width */
+  .medicine-grid {
+    width: 100%;
+  }
+
+  /* Still 2 per row on mobile landscape */
+  .medicine-grid .medicine-card {
+    width: calc(50% - 15px);
+  }
+}
+
+/* Small Phones */
+@media (max-width: 500px) {
+  /* 1 product per row */
+  .medicine-grid .medicine-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,133 @@
+.reports-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.reports-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #127c72;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Report Type Selector */
+.report-type-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.report-type-selector label {
+  font-weight: bold;
+  color: #131313;
+}
+
+.report-type-selector select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  flex: 1 1 200px;
+}
+
+/* Filters Panel (card style) */
+.filters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+.filters-panel input,
+.filters-panel select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1 1 50px;
+  font-size: 15px;
+}
+
+.filters-panel input:focus,
+.filters-panel select:focus {
+  border-color: #127c72;
+  outline: none;
+}
+
+/* Generate Button */
+.generate-btn {
+  background: #127c72;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.generate-btn:hover {
+  background: #0e5f57;
+}
+
+/* Table Wrapper (card style) */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc; /* lighter border for columns */
+}
+
+th {
+  background: #127c72;
+  color: white;
+  font-weight: bold;
+}
+
+/* No data text */
+.no-data {
+  text-align: center;
+  color: gray;
+  padding: 20px;
+  font-size: 16px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .filters-panel {
+    flex-direction: column;
+        flex-wrap: wrap;
+    
+  }
+
+  .generate-btn {
+    width: 100%;
+  }
+  .stock-report-select, .stock-report-category {
+    height: 100px;
+    width:20px;
+  }
+
+}

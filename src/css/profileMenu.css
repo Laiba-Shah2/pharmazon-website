@@ -1,0 +1,27 @@
+.profile-container {
+  position: relative;
+}
+
+.profile-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.profile-popup {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  /* background: #ffffff; */
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 40px;
+  background-color: rgb(42, 165, 89);
+}
+
+.profile-popup button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}

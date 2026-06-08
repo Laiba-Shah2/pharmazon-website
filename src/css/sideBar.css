@@ -1,0 +1,70 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #127c72; /* dark maroon */
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-logo {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.sidebar-menu li a{
+  text-decoration: none;
+  color: #FFFFFF;
+
+}
+
+.sidebar-menu li:hover {
+  background-color: #1fa89b;
+}
+
+.sidebar-footer {
+  padding: 0 20px 20px;
+}
+
+.sidebar-footer li {
+  display: flex;
+  gap: 12px;
+  padding: 12px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar-footer li:hover {
+  background-color: #1fa89b;
+}
+/* Active tab highlight */
+.sidebar-menu li.active {
+  background-color: #1fa89b; /* highlight color */
+  font-weight: 600;
+  color: white;
+}

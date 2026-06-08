@@ -1,0 +1,107 @@
+/* ================================
+   Why Choose Us - Main Container
+================================ */
+.why-choose-us-container {
+  width: 100%;
+  padding: 50px 20px 70px 20px;
+  /* background: #f8f8f8; */
+      background-color: #127c712c;
+
+}
+
+.why-heading {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  color: #383b3b;
+  margin-bottom: 40px;
+  margin-top: 80px;
+
+
+
+
+}
+
+/* ================================
+   Inner Container (Flex Layout)
+================================ */
+.why-choose-us-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 50px 0px;
+}
+
+/* ================================
+   Individual Card Design
+================================ */
+.choose-card {
+  background: #127c72;
+  width: 260px;
+  padding: 25px 20px;
+  border-radius: 14px;
+  text-align: center;
+  border: 2px solid #cde7e4; /* light teal border */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.choose-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border-color: #127c72;
+  background-color: #ffffff;
+
+  .choose-icon {
+  color: #127c72;
+  }
+  .choose-title {
+color:#383b3b;
+  }
+  .choose-description{
+color:#383b3b;
+
+  }
+}
+
+
+/* ================================
+   Icon Styling
+================================ */
+.choose-icon {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+/* ================================
+   Title & Description
+================================ */
+.choose-title {
+  font-size: 18px;
+  font-weight: 700;
+    color: #ffffff;
+
+  margin-bottom: 6px;
+}
+
+.choose-description {
+  font-size: 14px;
+    color: #ffffff;
+
+  line-height: 1.4;
+}
+
+/* ================================
+   Mobile Responsive
+================================ */
+@media (max-width: 480px) {
+  .choose-card {
+    width: 100%;
+  }
+  
+  .choose-title {
+    font-size: 17px;
+  }
+}

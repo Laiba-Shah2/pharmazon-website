@@ -1,0 +1,103 @@
+/* order details page wrapper */
+.order-details {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* main heading */
+.order-details h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.3rem;
+  color: #1a1a1a;
+}
+
+.order-details-box{
+
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+/* left column - order details */
+div.order-inner-div {
+  flex: 1;
+  min-width: 500px;
+  font-size: 17px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* right column - order items */
+.order-items-list-wrapper {
+  flex: 2;
+  min-width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+/* each order item */
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+}
+
+.order-item p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+}
+
+/* order item info container (text) */
+.order-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* headings inside order details */
+.order-inner-div h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+/* paragraphs inside order details */
+.order-inner-div p {
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .order-inner-div,
+  .order-items-list-wrapper {
+    flex-direction: column;
+  }
+  .order-inner-div {
+    margin-bottom: 20px;
+  }
+}
