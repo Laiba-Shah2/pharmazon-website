@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/notificationPopup.css";
+import API_BASE from "../config.js";
+
 
 function NotificationsPopup() {
   const [notifications, setNotifications] = useState([]);
@@ -14,7 +16,7 @@ function NotificationsPopup() {
     const fetchNotifications = async () => {
       try {
         const response = await axios.post(
-          "http://localhost/online-pharmacy/backend/public/index.php?action=api/getNotifications",
+          `${API_BASE}/backend/public/index.php?action=api/getNotifications`,
           { user_id }
         );
 

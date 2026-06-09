@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../css/categorySidebar.css"; // FIX: Adjusted path to resolve import error in compilation environment
+import API_BASE from "../config.js";
+
+import "../css/categorySidebar.css"; 
 
 function CategorySidebar({ onFilterChange, activeCategoryId }) {
   // State to store categories fetched from the backend (ID + Name)
@@ -15,7 +17,7 @@ function CategorySidebar({ onFilterChange, activeCategoryId }) {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost/online-pharmacy/backend/public/index.php?action=api/getCategory"
+          `${API_BASE}/backend/public/index.php?action=api/getCategory`
         );
         if (response.data.status === "success" && response.data.data) {
           setFetchedCategories(response.data.data);
@@ -40,11 +42,6 @@ function CategorySidebar({ onFilterChange, activeCategoryId }) {
     }
   };
 
-  // 3. Apply default filter on mount (loads all medicines initially)
-  // useEffect(() => {
-  //   // Send null for category ID to load all medicines
-  //   applyFilters(null, priceRange.min, priceRange.max);
-  // }, [fetchedCategories]); // Re-run once categories are loaded
 
   // Handler for category clicks
   const handleCategoryClick = (id) => {

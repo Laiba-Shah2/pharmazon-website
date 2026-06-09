@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MedicineCard from "../components/medicineCard";
 import "../css/medicines.css";
+import API_BASE from "../config.js";
+
 
 function FeaturedMedicines() {
     // State to hold the fetched medicine data
@@ -12,7 +14,7 @@ function FeaturedMedicines() {
     const fetchFeaturedMedicines = async () => {
         try {
             const response = await axios.get(
-                "http://localhost/online-pharmacy/backend/public/index.php?action=api/getMedicines"
+                `${API_BASE}/backend/public/index.php?action=api/getMedicines`
             );
 
             if (response.data.status === "success") {

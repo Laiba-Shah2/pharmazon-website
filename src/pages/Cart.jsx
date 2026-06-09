@@ -2,6 +2,8 @@ import "../css/cart.css";
 import CartProducts from "../components/cart-components.jsx";
 import OrderSummary from "../components/order-summary.jsx";
 import { useEffect, useState } from "react";
+import API_BASE from "../config.js";
+ 
 import axios from "axios";
 function Cart({ cartItems = [], setCartItems }) {
     const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ function Cart({ cartItems = [], setCartItems }) {
             try {
                 const user = JSON.parse(localStorage.getItem("user"));
                 const cart_id = user ? user.cart_id : null;
-                const res = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/getCart", { cart_id }); // your protected endpoint
+                const res = await axios.post(`${API_BASE}/backend/public/index.php?action=api/getCart`, { cart_id }); // your protected endpoint
                 if (res.data.status) {
                     setCartItems(res.data.cart_items);
                     setcartInfo(res.data);

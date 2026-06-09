@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/Catalogue.css";
+import API_BASE from "../../config.js";
 
 function Catalogue() {
   const [catalogues, setCatalogues] = useState([]);
@@ -21,7 +22,7 @@ function Catalogue() {
   async function fetchCatalogues() {
     try {
       const res = await axios.get(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/getCategory"
+        `${API_BASE}/backend/public/index.php?action=api/getCategory`
         ,  { withCredentials: true }
       );
 
@@ -56,7 +57,7 @@ function Catalogue() {
       fd.append("med_image_url", formData.med_image_url);
 
       const res = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/addCategory",
+        `${API_BASE}/backend/public/index.php?action=api/addCategory`,
         fd,
         { headers: { "Content-Type": "multipart/form-data",withCredentials: true } }
         
@@ -96,7 +97,7 @@ function Catalogue() {
       }
 
       const res = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/updateCategory",
+        `${API_BASE}/backend/public/index.php?action=api/updateCategory`,
         fd,
         { headers: { "Content-Type": "multipart/form-data", withCredentials: true } }
         
@@ -145,7 +146,7 @@ function Catalogue() {
 
     try {
       const res = await axios.post(
-  "http://localhost/online-pharmacy/backend/public/index.php?action=api/deleteCategory",
+  `${API_BASE}/backend/public/index.php?action=api/deleteCategory`,
   { id },                     // this is the data/body
   { withCredentials: true }   // this is the config
 );
@@ -234,7 +235,7 @@ function Catalogue() {
                 <td>{cat.no_of_medicines}</td>
                 <td>
                   <img
-                    src={`http://localhost/online-pharmacy/backend${cat.image_url}`}
+                    src={`${API_BASE}/backend${cat.image_url}`}
                     alt={cat.name}
                     className="catalogue-image"
                     style={{ width: "100px", height: "100px", objectFit: "cover" }}

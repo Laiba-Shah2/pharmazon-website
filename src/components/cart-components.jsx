@@ -2,6 +2,7 @@ import "../css/cart-component.css";
 import axios from "axios";
 import { FaTrash } from "react-icons/fa";
 import {useState} from "react";
+import API_BASE from "../config.js";
 function CartProducts({ product, setCartItems }) {
 
 
@@ -13,7 +14,7 @@ function CartProducts({ product, setCartItems }) {
   const increase = async () => {
     try {
       const res = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/addToCart",
+        `${API_BASE}/backend/public/index.php?action=api/addToCart`,
         {
           medicine_id: product.medicine_id,
           cart_id,
@@ -48,7 +49,7 @@ function CartProducts({ product, setCartItems }) {
 
     try {
       const res = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/removeFromCart",
+        `${API_BASE}/backend/public/index.php?action=api/removeFromCart`,
         {
           cart_id,
           medicine_id: product.medicine_id,
@@ -80,7 +81,7 @@ function CartProducts({ product, setCartItems }) {
 const deleteCartItem = async () => {
   try {
     const response = await axios.post(
-      "http://localhost/online-pharmacy/backend/public/index.php?action=api/removeFromCart",
+      `${API_BASE}/backend/public/index.php?action=api/removeFromCart`,
       {
         cart_id,
         medicine_id: product.medicine_id,
@@ -112,7 +113,7 @@ const deleteCartItem = async () => {
 
       <div className="cart-product-thumbnail">
         <img
-          src={`http://localhost/online-pharmacy/backend${product.image_url}`}
+          src={`${API_BASE}/backend${product.image_url}`}
           alt={product.name}
         />
       </div>

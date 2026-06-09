@@ -4,6 +4,7 @@ import axios from "axios";
 import logo from '../assets/Pharmazon.png';
 import ShowPassword from '../components/showPassword.jsx';
 import '../css/login-register.css';
+import API_BASE from "../config.js";
 
 function ResetPassword() {
     const [searchParams] = useSearchParams(); // to read ?token=xyz
@@ -31,7 +32,7 @@ function ResetPassword() {
         // Step 2: Call backend API
         try {
             const response = await axios.post(
-                "http://localhost/online-pharmacy/backend/public/index.php?action=api/reset-password",
+                `${API_BASE}/backend/public/index.php?action=api/reset-password`,
                 { email, token, password },
                 { headers: { "Content-Type": "application/json" } }
             );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_BASE from "../config.js";
 
 function VerifyEmail({ setUser }) {
   const [message, setMessage] = useState("Verifying...");
@@ -22,7 +23,7 @@ function VerifyEmail({ setUser }) {
     const verify = async () => {
       try {
         const res = await axios.get(
-          `http://localhost/online-pharmacy/backend/public/index.php?action=api/verifyEmail&token=${token}&email=${encodeURIComponent(email)}`
+          `${API_BASE}/backend/public/index.php?action=api/verifyEmail&token=${token}&email=${encodeURIComponent(email)}`
         );
 
         if (res.data.status === "success") {

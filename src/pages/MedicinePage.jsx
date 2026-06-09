@@ -4,6 +4,9 @@ import CategorySidebar from "../components/categorySidebar.jsx";
 import MedicineCard from "../components/medicineCard.jsx";
 import "../css/medicinePage.css";
 import axios from "axios";
+import API_BASE from "../config.js";
+
+
 import { useLocation } from "react-router-dom";
 
 function MedicinePage() {
@@ -42,7 +45,7 @@ function MedicinePage() {
     // 3. API Call
     try {
       const response = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/filterMedicine",
+        `${API_BASE}/backend/public/index.php?action=api/filterMedicine`,
         payload // Sending the cleaned payload object
       );
       

@@ -1,9 +1,10 @@
 import axios from "axios";
+import API_BASE from "../config.js";
 
 const addToCartAPI = async (productId, quantity = 1, cart_id) => {
   try {
     const response = await axios.post(
-      "http://localhost/online-pharmacy/backend/public/index.php?action=api/addToCart",
+      `${API_BASE}/backend/public/index.php?action=api/addToCart`,
       { medicine_id: productId, quantity, cart_id },
       { headers: { "Content-Type": "application/json" } }
     );

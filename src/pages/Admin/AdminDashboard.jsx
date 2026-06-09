@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API_BASE from "../../config.js";
 
 import TopSellingMedicines from "../../components/TopSellingMedicines.jsx";
 import RecentOrderTable from "../../components/recentOrderTable.jsx";
@@ -7,7 +8,7 @@ import QuickActions from "../../components/quickActions.jsx";
 import SummaryCards from "../../components/SummaryCards.jsx";
 
 function AdminDashboard() {
-  const BASE_URL = "http://localhost/online-pharmacy/backend/public";
+  const BASE_URL = `${API_BASE}/backend/public`;
 
   const [metrics, setMetrics] = useState([]);
 

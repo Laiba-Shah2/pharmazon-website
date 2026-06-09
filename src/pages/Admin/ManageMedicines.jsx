@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../css/manageMedicines.css";
+import API_BASE from "../../config.js";
+
 
 function ManageMedicines() {
-  const BASE_URL = "http://localhost/online-pharmacy/backend/public";
+  const BASE_URL = `${API_BASE}/backend/public`;
 
   const [categories, setCategories] = useState([]);
   const [medicines, setMedicines] = useState([]);
@@ -115,9 +117,6 @@ function ManageMedicines() {
   // ---------------------------
   // EDIT MEDICINE
   // ---------------------------
-  // ---------------------------
-  // EDIT MEDICINE
-  // ---------------------------
   const handleEdit = (m) => {
     setIsEditing(true);
 
@@ -134,7 +133,7 @@ function ManageMedicines() {
       med_image_url: "",
     });
 
-    setPreviewImage(m.image_url ? `http://localhost/online-pharmacy/backend/app${m.image_url}` : null);
+    setPreviewImage(m.image_url ? `${API_BASE}/backend/app${m.image_url}` : null);
   };
 
   // ---------------------------
@@ -320,7 +319,7 @@ function ManageMedicines() {
                 <td>
                   {m.image_url ? (
                     <img
-                      src={`http://localhost/online-pharmacy/backend${m.image_url}`}
+                      src={`${API_BASE}/backend${m.image_url}`}
 
                       className="table-img"
                       alt=""
@@ -335,7 +334,6 @@ function ManageMedicines() {
                 <td>Rs {m.price}</td>
 
                 <td>
-                  {/* 🟢 NEW, CORRECT CODE: Use the name fetched directly from the DB join */}
                   {m.category_name}
                 </td>
 

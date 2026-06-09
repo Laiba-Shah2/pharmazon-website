@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/recentOrders.css";
+import API_BASE from "../config.js";
 
 const RecentOrderTable = () => {
   const [orders, setOrders] = useState([]);

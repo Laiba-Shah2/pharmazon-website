@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"; 
 import { useNavigate } from "react-router-dom"; 
 import "../css/shopByCategories.css";
+import API_BASE from "../config.js";
 
 function Categories() {
 
@@ -16,7 +17,7 @@ function Categories() {
     const fetchCategories = async () => {
         try {
             const response = await axios.get(
-                "http://localhost/online-pharmacy/backend/public/index.php?action=api/getCategory"
+                `${API_BASE}/backend/public/index.php?action=api/getCategory`
             );
 
             // Assuming your PHP returns status: "success" (string) or status: true (boolean)

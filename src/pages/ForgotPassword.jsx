@@ -2,6 +2,9 @@ import '../css/login-register.css';
 import logo from '../assets/Pharmazon.png';
 import { useState } from "react";
 import axios from "axios";
+import API_BASE from "../config.js";
+
+
 function ForgotPassword() {
 
     const [email, setEmail] = useState("");
@@ -19,7 +22,7 @@ function ForgotPassword() {
 
         try {
             const response = await axios.post(
-                "http://localhost/online-pharmacy/backend/public/index.php?action=api/forgot-password",
+                `${API_BASE}/public/index.php?action=api/forgot-password`,
                 { email },
                 {
                     headers: { "Content-Type": "application/json" }

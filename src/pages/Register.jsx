@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios"; // to send requests to backend
 import ShowPassword from '../components/showPassword.jsx';
+import API_BASE from "../config.js";
 
 import logo from '../assets/Pharmazon.png';
 import '../css/login-register.css';
@@ -20,7 +21,7 @@ function SignUp() {
         setMessage("");
 
         try {
-            const response = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/register", {
+            const response = await axios.post(`${API_BASE}/backend/public/index.php?action=api/register`, {
                 username,
                 email,
                 password

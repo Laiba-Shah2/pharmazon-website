@@ -3,6 +3,8 @@ import "../css/checkout.css";
 import OrderSummary from "../components/order-summary.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config.js";
+
 
 function Checkout({ cartItems = [], setCartItems }) {
 
@@ -21,7 +23,7 @@ function Checkout({ cartItems = [], setCartItems }) {
                 const cart_id = user ? user.cart_id : null;
 
                 const res = await axios.post(
-                    "http://localhost/online-pharmacy/backend/public/index.php?action=api/getCart",
+                    `${API_BASE}/backend/public/index.php?action=api/getCart`,
                     { cart_id }
                 );
 
@@ -60,7 +62,7 @@ function Checkout({ cartItems = [], setCartItems }) {
 
         try {
             const response = await axios.post(
-                "http://localhost/online-pharmacy/backend/public/index.php?action=api/placeOrder",
+                `${API_BASE}/backend/public/index.php?action=api/placeOrder`,
                 payload
             );
 

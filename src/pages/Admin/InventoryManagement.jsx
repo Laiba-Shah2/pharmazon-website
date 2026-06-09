@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/manageInventory.css"; 
+import API_BASE from "../../config.js";
 
-const BASE_URL = "http://localhost/online-pharmacy/backend/public";
+const BASE_URL = `${API_BASE}/backend/public`;
 
 export default function InventoryManager() {
   const [medicines, setMedicines] = useState([]);

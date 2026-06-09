@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/topSelling.css";
+import API_BASE from "../config.js";
 
 export default function TopSellingMedicines() {
   const [topMedicines, setTopMedicines] = useState([]);
@@ -9,7 +10,7 @@ export default function TopSellingMedicines() {
     const fetchTopSelling = async () => {
       try {
         const res = await axios.get(
-          "http://localhost/online-pharmacy/backend/public/index.php?action=api/dashboard-overview",
+          `${API_BASE}/backend/public/index.php?action=api/dashboard-overview`,
         );
 
         // Because some invalid request is adding garbage text after JSON,

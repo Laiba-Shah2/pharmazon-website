@@ -4,6 +4,9 @@ import thumbnail from "../assets/panadol1.jpg";
 import { useLocation } from "react-router-dom";
 import addToCartAPI from "../services/cart.jsx"
 import axios from "axios"
+import API_BASE from "../config.js";
+
+
 function MedicineDetails({ product, cartItems =[],setCartItems }) {
 
   const { state: medicine } = useLocation();
@@ -17,7 +20,7 @@ const [loading, setLoading] = useState(true)
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         const cart_id = user ? user.cart_id : null;
-        const res = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/getCart", { cart_id }); // your protected endpoint
+        const res = await axios.post(`${API_BASE}/backend/public/index.php?action=api/getCart`, { cart_id }); // your protected endpoint
         if (res.data.status) {
           setCartItems(res.data.cart_items);
           // setcartInfo(res.data);
@@ -105,7 +108,7 @@ const [loading, setLoading] = useState(true)
 
         <div className="medicine-image">
           <img
-            src={medicine.image_url ? `http://localhost/online-pharmacy/backend${medicine.image_url}` : thumbnail}
+            src={medicine.image_url ? `${API_BASE}/backend${medicine.image_url}` : thumbnail}
             alt={medicine.name}
             className="medicine-image-url"
           />        </div>

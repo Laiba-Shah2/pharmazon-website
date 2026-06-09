@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../css/OrdersManagement.css";
+import API_BASE from "../../config.js";
 
 export default function OrderManagement() {
   const [orders, setOrders] = useState([]);
@@ -10,7 +11,7 @@ export default function OrderManagement() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost/online-pharmacy/backend/public/index.php?action=api/getOrders");
+        const response = await axios.get(`${API_BASE}/backend/public/index.php?action=api/getOrders`);
         if (response.data.status) {
           setOrders(response.data.orders);
         } else {
@@ -30,7 +31,7 @@ export default function OrderManagement() {
   // Approve order function
   const approveOrder = async (orderId) => {
     try {
-      const response = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/approveOrders", { order_id: orderId });
+      const response = await axios.post(`${API_BASE}/backend/public/index.php?action=api/approveOrders`, { order_id: orderId });
       if (response.data.status) {
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
@@ -50,7 +51,7 @@ export default function OrderManagement() {
 
     try {
 
-      const response = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/shipOrders", { order_id: orderId });
+      const response = await axios.post(`${API_BASE}/backend/public/index.php?action=api/shipOrders`, { order_id: orderId });
       if (response.data.status) {
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
@@ -79,7 +80,7 @@ export default function OrderManagement() {
   const deliverOrder = async (orderId) => {
     try {
 
-      const response = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/deliverOrders", { order_id: orderId });
+      const response = await axios.post(`${API_BASE}/backend/public/index.php?action=api/deliverOrders`, { order_id: orderId });
 
       if (response.data.status == true || response.data.data == "success") {
 

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "../css/myOrders.css";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import API_BASE from "../config.js";
+
 function MyOrders() {
   const [orders, setOrders] = useState([]);
 
@@ -15,7 +17,7 @@ function MyOrders() {
     const getOrders = async () => {
 
       try{
-      const response = await axios.post("http://localhost/online-pharmacy/backend/public/index.php?action=api/getCustomerOrders", {user_id:user_id});
+      const response = await axios.post(`${API_BASE}/backend/public/index.php?action=api/getCustomerOrders`, {user_id:user_id});
       if(response.data.status===true || response.data.status=="success"){
     setOrders(response.data.orders);
     console.log(response.data);

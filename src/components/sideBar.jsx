@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/sideBar.css";
+import API_BASE from "../config.js";
+
 import { 
   FaTachometerAlt, FaPills, FaList, FaBoxes, 
   FaFileAlt, FaCheckCircle, FaShoppingCart, FaSignOutAlt 
@@ -22,7 +24,7 @@ function Sidebar() {
   localStorage.removeItem("token");
 
   try {
-    await fetch("http://localhost/online-pharmacy/backend/public/index.php?action=api/logout", {
+    await fetch(`${API_BASE}/backend/public/index.php?action=api/logout`, {
       method: "POST", 
       headers: {
         "Content-Type": "application/json",

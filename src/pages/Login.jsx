@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
-// NOTE: Assuming the following imports are correctly configured in your environment:
 import '../css/login-register.css';
 import logo from '../assets/Pharmazon.png';
+import API_BASE from "../config.js";
+
 import ShowPassword from '../components/showPassword.jsx';
 
 function Login({ setUser }) {
@@ -23,7 +24,7 @@ function Login({ setUser }) {
 
     try {
       const response = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/login",
+        `${API_BASE}/backend/public/index.php?action=api/login`,
         { email, password }
       );
 
@@ -57,15 +58,12 @@ function Login({ setUser }) {
         // Logical Failure - status is FALSE (e.g., "Incorrect password")
         setMessage(message);
         console.log("wrong", response.data);
-        // Do NOT redirect; the user stays on the login page.
       }
 
     } catch (error) {
-      // Handle Network/HTTP Status Errors (e.g., 404, 500, or connection refusal)
       let errorMessage = "Connection error. Please ensure the backend server is running.";
 
       if (axios.isAxiosError(error) && error.response) {
-        // Axios detected a non-2xx response (400, 401, 500)
         console.error("Server responded with HTTP error status:", error.response.status, error.response.data);
 
         if (error.response.data && error.response.data.message) {
@@ -75,7 +73,6 @@ function Login({ setUser }) {
           errorMessage = `Request failed: HTTP Status ${error.response.status}.`;
         }
       } else {
-        // Generic error (network down, bad configuration, etc.)
         console.error("Login failed due to client/network issue:", error);
       }
 

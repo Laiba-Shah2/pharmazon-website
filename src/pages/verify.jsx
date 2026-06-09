@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import API_BASE from "../config.js";
 
 function Verify() {
   const [message, setMessage] = useState(""); // success or error message

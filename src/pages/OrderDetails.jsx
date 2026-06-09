@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../css/orderDetails.css";
+import API_BASE from "../config.js";
+
 export default function OrderDetails() {
   const { id } = useParams(); // gets :id from route
   const [orderDetail, setOrderDetail] = useState([]);
@@ -13,7 +15,7 @@ export default function OrderDetails() {
   const getOrderDetails = async (orderId) => {
     try {
       const response = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/getOrderDetail",
+        `${API_BASE}/backend/public/index.php?action=api/getOrderDetail`,
         { order_id: id }
       );
 
@@ -33,7 +35,7 @@ export default function OrderDetails() {
   const getOrderItemDetails = async (id) => {
     try {
       const response = await axios.post(
-        "http://localhost/online-pharmacy/backend/public/index.php?action=api/getOrderItemDetails",
+        `${API_BASE}/backend/public/index.php?action=api/getOrderItemDetails`,
         { order_id: id }
       );
 
@@ -67,7 +69,7 @@ const handleCancel = async () => {
   setIsCancelling(true);
   try {
     const response = await axios.post(
-      "http://localhost/online-pharmacy/backend/public/index.php?action=api/cancelOrder",
+      `${API_BASE}/backend/public/index.php?action=api/cancelOrder`,
       {
         order_id: orderDetail.id, // use current order's id
       }
@@ -123,7 +125,7 @@ const handleCancel = async () => {
               <img
                 src={
                   item.image_url
-                    ? `http://localhost/online-pharmacy/backend${item.image_url}`
+                    ? `${API_BASE}/backend${item.image_url}`
                     : "/placeholder.png"
                 }
                 alt={item.name}

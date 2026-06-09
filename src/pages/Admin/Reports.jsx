@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/report.css";
+import API_BASE from "../../config.js";
 
 function Reports() {
   const [reportType, setReportType] = useState("stock");
@@ -24,7 +25,7 @@ function Reports() {
   
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost/online-pharmacy/backend/public/index.php?action=api/getCategory")
+        const response = await axios.get(`${API_BASE}/backend/public/index.php?action=api/getCategory`)
         if (response.data.status == true || response.data.status == "success") {
           setCategories(response.data.data);
           console.log("Fetched Categories:", response.data.data);
@@ -45,7 +46,7 @@ function Reports() {
 
     const fetchMedicines = async () => {
       try {
-        const response = await axios.get("http://localhost/online-pharmacy/backend/public/index.php?action=api/getMedicines")
+        const response = await axios.get(`${API_BASE}/backend/public/index.php?action=api/getMedicines`)
 
         if (response.data.status == true || response.data.status == "success") {
           setMedicines(response.data.data)
@@ -94,7 +95,7 @@ function Reports() {
         }
 
         const response = await axios.post(
-          "http://localhost/online-pharmacy/backend/public/index.php?action=api/stockReport",
+          `${API_BASE}/backend/public/index.php?action=api/stockReport`,
           { ...stockFilters }
         );
 
@@ -109,7 +110,7 @@ function Reports() {
       } else {
 
         const response = await axios.post(
-          "http://localhost/online-pharmacy/backend/public/index.php?action=api/salesReport",
+          `${API_BASE}/backend/public/index.php?action=api/salesReport`,
           { ...salesFilters }
         );
 

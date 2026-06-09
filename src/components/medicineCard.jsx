@@ -3,6 +3,7 @@ import "../css/medicineCard.css";
 import thumbnail from '../assets/panadol1.jpg';
 import { Link } from "react-router-dom";
 import addToCartAPI from "../services/cart.jsx"
+import API_BASE from "../config.js";
 
 function MedicineCard({ medicine }) {
 
@@ -17,7 +18,7 @@ function MedicineCard({ medicine }) {
   const productId = medicine.id
 
   // Construct the full URL safely
-  const fullImageUrl = `http://localhost/online-pharmacy/backend${imageUrl}`;
+  const fullImageUrl = `${API_BASE}/backend${imageUrl}`;
 
   const handleAddToCart = async () => {
     const quantity = 1;
@@ -29,7 +30,7 @@ function MedicineCard({ medicine }) {
     try {
       // console.log(productId, quantity, cart_id)
       const response = await addToCartAPI(productId, quantity, cart_id);
-console.log(medicine, user, "helloooooooo");
+      console.log(medicine, user, "helloooooooo");
 
       if (response.status === "success") {
         alert("Added to cart!");
